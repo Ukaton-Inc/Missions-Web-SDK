@@ -15,7 +15,7 @@ _A client-side JavaScript SDK for the Ukaton Missions smart insoles_
 0. Make sure you have a Web Bluetooth-enabled device
    - **Chrome for Desktop [PREFERRED]**: enable Web Bluetooth by going to `chrome://flags/#enable-experimental-web-platform-features` and check `Experimental Web Platform features`
    - **iOS**: Use [this app](https://itunes.apple.com/us/app/webble/id1193531073?mt=8) to demo your web apps. Unfortunately iOS is [very negligent](https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md) on various Web API's.
-1. Save a copy of the [Web SDK](https://ukaton-missions.glitch.me/Missions.js)
+1. Save a copy of the [Web SDK](https://github.com/Ukaton-Inc/Missions-Web-SDK/blob/main/Missions.js)
 
 1. In your HTML `<head></head>` element, insert the file in a script element:
 
