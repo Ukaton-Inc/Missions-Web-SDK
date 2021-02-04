@@ -1,418 +1,656 @@
 <html>
-    <head>
-        <title>Ukaton Missions</title>
-        <link rel="icon" href="https://cdn.glitch.com/024019a9-317f-4462-b4f9-7674047a399c%2Fukaton_no_text_low.png?v=1595095184886">
-    
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js'></script>
-        <script src='./Missions.js'></script>
-    </head>
+  <head>
+    <title>Ukaton Missions</title>
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/024019a9-317f-4462-b4f9-7674047a399c%2Fukaton_no_text_low.png?v=1595095184886"
+    />
 
-    <style>
-        .mirror {
-            transform: scaleX(-1);
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        label {
-            display: block;
-            user-select: none;
-        }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js"></script>
+    <script src="./Missions.js"></script>
+  </head>
 
-        input[type='number'] {
-            width: 100px;
-        }
-    </style>
+  <style>
+    .mirror {
+      transform: scaleX(-1);
+    }
 
-    <body>
-        <h1>Ukaton Missions</h1>
+    label {
+      display: block;
+      user-select: none;
+    }
 
-        <hr>
-        
-        <div class='connect'>
-            <h2>Connect</h2>
+    input[type="number"] {
+      width: 100px;
+    }
+  </style>
 
-            <span class='left'>
-                <input type='button' class='mirror' value='👟'>
-            </span>
+  <body>
+    <h1>Ukaton Missions</h1>
 
-            <span class='right'>
-                <input type='button' class='right' value='👟'>
-            </span>
+    <hr />
+
+    <div class="connect">
+      <h2>Connect</h2>
+
+      <span class="left">
+        <input type="button" class="mirror" value="👟" />
+      </span>
+
+      <span class="right">
+        <input type="button" class="right" value="👟" />
+      </span>
+    </div>
+
+    <hr />
+
+    <div class="pressure">
+      <h2>Pressure</h2>
+
+      <div class="centerOfMass">
+        <h3>
+          Center of Mass
+        </h3>
+
+        <label class="x">x <input type="number" readonly/></label>
+        <label class="y">y <input type="number" readonly/></label>
+      </div>
+
+      <div class="left">
+        <h3>Left</h3>
+
+        <label class="enable">
+          enabled <input type="checkbox" disabled />
+        </label>
+
+        <div class="data">
+          <h3>Data</h3>
+
+          <label>0 <input type="number" readonly/></label>
+          <label>1 <input type="number" readonly/></label>
+          <label>2 <input type="number" readonly/></label>
+          <label>3 <input type="number" readonly/></label>
+          <label>4 <input type="number" readonly/></label>
+          <label>5 <input type="number" readonly/></label>
+          <label>6 <input type="number" readonly/></label>
+          <label>7 <input type="number" readonly/></label>
+          <label>8 <input type="number" readonly/></label>
+          <label>9 <input type="number" readonly/></label>
+          <label>10 <input type="number" readonly/></label>
+          <label>11 <input type="number" readonly/></label>
+          <label>12 <input type="number" readonly/></label>
+          <label>13 <input type="number" readonly/></label>
+          <label>14 <input type="number" readonly/></label>
+          <label>15 <input type="number" readonly/></label>
+          <label>timestamp (ms) <input type="number" readonly/></label>
         </div>
 
-        <hr>
+        <div class="centerOfMass">
+          <h3>
+            Center of Mass
+          </h3>
 
-        <div class='pressure'>
-            <h2>Pressure</h2>
+          <label class="x">x <input type="number" readonly/></label>
+          <label class="y">y <input type="number" readonly/></label>
+        </div>
+      </div>
 
-            <div class='left'>
-                <h3>Left</h3>
+      <div class="right">
+        <h3>Right</h3>
 
-                <label class='enable'>
-                    enabled <input type='checkbox' disabled>
-                </label>
+        <label class="enable">
+          enabled <input type="checkbox" disabled />
+        </label>
 
-                <div class='data'>
-                    <h3>Data</h3>
+        <div class="data">
+          <h3>Data</h3>
 
-                    <label>0 <input type='number' readonly></label>
-                    <label>1 <input type='number' readonly></label>
-                    <label>2 <input type='number' readonly></label>
-                    <label>3 <input type='number' readonly></label>
-                    <label>4 <input type='number' readonly></label>
-                    <label>5 <input type='number' readonly></label>
-                    <label>6 <input type='number' readonly></label>
-                    <label>7 <input type='number' readonly></label>
-                    <label>8 <input type='number' readonly></label>
-                    <label>9 <input type='number' readonly></label>
-                    <label>10 <input type='number' readonly></label>
-                    <label>11 <input type='number' readonly></label>
-                    <label>12 <input type='number' readonly></label>
-                    <label>13 <input type='number' readonly></label>
-                    <label>14 <input type='number' readonly></label>
-                    <label>15 <input type='number' readonly></label>
-                    <label>timestamp (ms) <input type='number' readonly></label>
-                </div>
-            </div>
-
-            <div class='right'>
-                <h3>Right</h3>
-
-                <label class='enable'>
-                    enabled <input type='checkbox' disabled>
-                </label>
-
-                <div class='data'>
-                    <h3>Data</h3>
-
-                    <label>0 <input type='number' readonly></label>
-                    <label>1 <input type='number' readonly></label>
-                    <label>2 <input type='number' readonly></label>
-                    <label>3 <input type='number' readonly></label>
-                    <label>4 <input type='number' readonly></label>
-                    <label>5 <input type='number' readonly></label>
-                    <label>6 <input type='number' readonly></label>
-                    <label>7 <input type='number' readonly></label>
-                    <label>8 <input type='number' readonly></label>
-                    <label>9 <input type='number' readonly></label>
-                    <label>10 <input type='number' readonly></label>
-                    <label>11 <input type='number' readonly></label>
-                    <label>12 <input type='number' readonly></label>
-                    <label>13 <input type='number' readonly></label>
-                    <label>14 <input type='number' readonly></label>
-                    <label>15 <input type='number' readonly></label>
-                    <label>timestamp (ms) <input type='number' readonly></label>
-                </div>
-            </div>
+          <label>0 <input type="number" readonly/></label>
+          <label>1 <input type="number" readonly/></label>
+          <label>2 <input type="number" readonly/></label>
+          <label>3 <input type="number" readonly/></label>
+          <label>4 <input type="number" readonly/></label>
+          <label>5 <input type="number" readonly/></label>
+          <label>6 <input type="number" readonly/></label>
+          <label>7 <input type="number" readonly/></label>
+          <label>8 <input type="number" readonly/></label>
+          <label>9 <input type="number" readonly/></label>
+          <label>10 <input type="number" readonly/></label>
+          <label>11 <input type="number" readonly/></label>
+          <label>12 <input type="number" readonly/></label>
+          <label>13 <input type="number" readonly/></label>
+          <label>14 <input type="number" readonly/></label>
+          <label>15 <input type="number" readonly/></label>
+          <label>timestamp (ms) <input type="number" readonly/></label>
         </div>
 
-        <hr>
+        <div class="centerOfMass">
+          <h3>
+            Center of Mass
+          </h3>
 
-        <div class='motion'>
-            <h2>Motion</h2>
+          <label class="x">x <input type="number" readonly/></label>
+          <label class="y">y <input type="number" readonly/></label>
+        </div>
+      </div>
+    </div>
 
-            <div class='left'>
-                <h3>Left</h3>
+    <hr />
 
-                <div class='sensors'>
-                    <h4>Sensors</h4>
+    <div class="motion">
+      <h2>Motion</h2>
 
-                    <label class='accelerometer'>accelerometer <input type='checkbox' disabled></label>
-                    <label class='gyroscope'>gyroscope <input type='checkbox' disabled></label>
-                    <label class='quaternion'>quaternion <input type='checkbox' disabled></label>
-                </div>
+      <div class="left">
+        <h3>Left</h3>
 
-                <div class='data'>
-                    <h4>Data</h4>
+        <div class="sensors">
+          <h4>Sensors</h4>
 
-                    <div class='accelerationIncludingGravity'>
-                        <h5>Acceleration Including Gravity</h5>
-
-                        <label class='x'>x <input readonly type='number'></label>
-                        <label class='y'>y <input readonly type='number'></label>
-                        <label class='z'>z <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-
-                    <div class='acceleration'>
-                        <h5>Acceleration</h5>
-
-                        <label class='x'>x <input readonly type='number'></label>
-                        <label class='y'>y <input readonly type='number'></label>
-                        <label class='z'>z <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-
-                    <div class='rotationRate'>
-                        <h5>Rotation Rate</h5>
-
-                        <label class='x'>x <input readonly type='number'></label>
-                        <label class='y'>y <input readonly type='number'></label>
-                        <label class='z'>z <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-                    
-                    <div class='quaternion'>
-                        <h5>Quaternion</h5>
-                        
-                        <label class='x'>x <input readonly type='number'></label>
-                        <label class='y'>y <input readonly type='number'></label>
-                        <label class='z'>z <input readonly type='number'></label>
-                        <label class='w'>w <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-
-                    <div class='orientation'>
-                        <h5>Orientation</h5>
-
-                        <label class='y'>yaw <input readonly type='number'></label>
-                        <label class='x'>pitch <input readonly type='number'></label>
-                        <label class='z'>roll <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-                </div>
-            </div>
-
-            <div class='right'>
-                <h3>Right</h3>
-
-                <div class='sensors'>
-                    <h4>Sensors</h4>
-
-                    <label class='accelerometer'>accelerometer <input type='checkbox' disabled></label>
-                    <label class='gyroscope'>gyroscope <input type='checkbox' disabled></label>
-                    <label class='quaternion'>quaternion <input type='checkbox' disabled></label>
-                </div>
-
-                <div class='data'>
-                    <h4>Data</h4>
-
-                    <div class='accelerationIncludingGravity'>
-                        <h5>Acceleration Including Gravity</h5>
-
-                        <label class='x'>x <input readonly type='number'></label>
-                        <label class='y'>y <input readonly type='number'></label>
-                        <label class='z'>z <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-
-                    <div class='acceleration'>
-                        <h5>Acceleration</h5>
-
-                        <label class='x'>x <input readonly type='number'></label>
-                        <label class='y'>y <input readonly type='number'></label>
-                        <label class='z'>z <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-
-                    <div class='rotationRate'>
-                        <h5>Rotation Rate</h5>
-
-                        <label class='x'>x <input readonly type='number'></label>
-                        <label class='y'>y <input readonly type='number'></label>
-                        <label class='z'>z <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-                    
-                    <div class='quaternion'>
-                        <h5>Quaternion</h5>
-                        
-                        <label class='x'>x <input readonly type='number'></label>
-                        <label class='y'>y <input readonly type='number'></label>
-                        <label class='z'>z <input readonly type='number'></label>
-                        <label class='w'>w <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-                    
-                    <div class='orientation'>
-                        <h5>Orientation</h5>
-
-                        <label class='y'>yaw <input readonly type='number'></label>
-                        <label class='x'>pitch <input readonly type='number'></label>
-                        <label class='z'>roll <input readonly type='number'></label>
-                        <label class='timestamp'>timestamp (ms) <input type='number' readonly></label>
-                    </div>
-                </div>
-            </div>
+          <label class="accelerometer"
+            >accelerometer <input type="checkbox" disabled
+          /></label>
+          <label class="gyroscope"
+            >gyroscope <input type="checkbox" disabled
+          /></label>
+          <label class="quaternion"
+            >quaternion <input type="checkbox" disabled
+          /></label>
         </div>
 
-        <hr>
+        <div class="data">
+          <h4>Data</h4>
 
-        <div class='haptics'>
-            <h2>Haptics</h2>
+          <div class="accelerationIncludingGravity">
+            <h5>Acceleration Including Gravity</h5>
 
-            <div class='left'>
-                <h3>Left</h3>
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
+          
+          <div class="gravity">
+            <h5>Gravity</h5>
 
-                <div class='vibrations'>
-                    <label>0 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>1 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>2 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>3 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>4 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>5 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>6 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>7 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                </div>
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
 
-                <input type='button' class='vibrate' value='Vibrate' disabled>
-                <input type='button' class='vibrateOnChange' value='Vibrate on Change' disabled>
-            </div>
+          <div class="acceleration">
+            <h5>Acceleration</h5>
 
-            <div class='right'>
-                <h3>Right</h3>
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
 
-                <div class='vibrations'>
-                    <label>0 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>1 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>2 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>3 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>4 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>5 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>6 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                    <label>7 <input type='number' value='-1' min='-1' max='123' step='1' disabled></label>
-                </div>
+          <div class="rotationRate">
+            <h5>Rotation Rate</h5>
 
-                <input type='button' class='vibrate' value='Vibrate' disabled>
-                <input type='button' class='vibrateOnChange' value='Vibrate on Change' disabled>
-            </div>
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
+
+          <div class="quaternion">
+            <h5>Quaternion</h5>
+
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="w">w <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
+
+          <div class="orientation">
+            <h5>Orientation</h5>
+
+            <label class="y">yaw <input readonly type="number"/></label>
+            <label class="x">pitch <input readonly type="number"/></label>
+            <label class="z">roll <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <h3>Right</h3>
+
+        <div class="sensors">
+          <h4>Sensors</h4>
+
+          <label class="accelerometer"
+            >accelerometer <input type="checkbox" disabled
+          /></label>
+          <label class="gyroscope"
+            >gyroscope <input type="checkbox" disabled
+          /></label>
+          <label class="quaternion"
+            >quaternion <input type="checkbox" disabled
+          /></label>
         </div>
 
-        <hr>
+        <div class="data">
+          <h4>Data</h4>
 
-        <div class='tap'>
-            <h2>Tap Detection</h2>
+          <div class="accelerationIncludingGravity">
+            <h5>Acceleration Including Gravity</h5>
 
-            <div class='left'>
-                <h3>Left</h3>
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
+          
+          <div class="gravity">
+            <h5>Gravity</h5>
 
-                <div class='taps'>
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
 
-                </div>
-            </div>
+          <div class="acceleration">
+            <h5>Acceleration</h5>
 
-            <div class='right'>
-                <h3>Right</h3>
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
 
-                <div class='taps'>
-                    
-                </div>
-            </div>
+          <div class="rotationRate">
+            <h5>Rotation Rate</h5>
+
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
+
+          <div class="quaternion">
+            <h5>Quaternion</h5>
+
+            <label class="x">x <input readonly type="number"/></label>
+            <label class="y">y <input readonly type="number"/></label>
+            <label class="z">z <input readonly type="number"/></label>
+            <label class="w">w <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
+
+          <div class="orientation">
+            <h5>Orientation</h5>
+
+            <label class="y">yaw <input readonly type="number"/></label>
+            <label class="x">pitch <input readonly type="number"/></label>
+            <label class="z">roll <input readonly type="number"/></label>
+            <label class="timestamp"
+              >timestamp (ms) <input type="number" readonly
+            /></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="haptics">
+      <h2>Haptics</h2>
+
+      <div class="left">
+        <h3>Left</h3>
+
+        <div class="vibrations">
+          <label
+            >0
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >1
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >2
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >3
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >4
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >5
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >6
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >7
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
         </div>
 
-        <hr>
+        <input type="button" class="vibrate" value="Vibrate" disabled />
+        <input
+          type="button"
+          class="vibrateOnChange"
+          value="Vibrate on Change"
+          disabled
+        />
+      </div>
 
-        <div class='battery'>
-            <h2>Battery</h2>
+      <div class="right">
+        <h3>Right</h3>
 
-            <div class='left'>
-                <h3>Left</h3>
-
-                <label class='batteryLevel'>Percentage <input type='number' value='0' min='0' max='1' step='0.01' readonly>%</label>
-                <label class='voltage'>Voltage <input type='number' value='0' min='0' max='1' step='0.01' readonly>v</label>
-            </div>
-
-            <div class='right'>
-                <h3>Right</h3>
-
-                <label class='batteryLevel'>Percentage <input type='number' value='0' min='0' max='1' step='0.01' readonly>%</label>
-                <label class='voltage'>Voltage <input type='number' value='0' min='0' max='1' step='0.01' readonly>v</label>
-            </div>
+        <div class="vibrations">
+          <label
+            >0
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >1
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >2
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >3
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >4
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >5
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >6
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
+          <label
+            >7
+            <input type="number" value="-1" min="-1" max="123" step="1" disabled
+          /></label>
         </div>
-    </body>
 
-    <script>
-        if(location.protocol != 'https:')
-            location.replace(`https:${location.href.substring(location.protocol.length)}`)
+        <input type="button" class="vibrate" value="Vibrate" disabled />
+        <input
+          type="button"
+          class="vibrateOnChange"
+          value="Vibrate on Change"
+          disabled
+        />
+      </div>
+    </div>
 
-        const missions = new Missions()
-        const sides = ['left', 'right']
-        sides.forEach(side => {
-            document.querySelector(`.connect .${side} input[type='button']`).addEventListener('click', event => missions[side].connect())
-            
-            missions[side].addEventListener('connect', event => {
-                document.querySelectorAll(`.${side} [disabled]`).forEach(input => input.disabled = false)
-                document.querySelector(`.connect .${side} input[type='button']`).disabled = true
+    <hr />
 
-                // PRESSURE SENSORS
-                document.querySelector(`.pressure .${side} .enable input`).addEventListener('input', event => {
-                    const enabled = event.target.checked
-                    missions[side].configureSensors({pressure: enabled})
-                })
-                
-                // ENABLE MOTION SENSORS
-                document.querySelectorAll(`.motion .${side} .sensors label`).forEach(label => {
-                    const type = label.className
-                    label.querySelector(`input[type='checkbox']`).addEventListener('input', event => {
-                        const enabled = event.target.checked
-                        missions[side].configureSensors({[type]: enabled})
-                    })
-                })
-                
-                // HAPTICS
-                let vibrateOnChange = false
-                document.querySelector(`.haptics .${side} .vibrateOnChange`).addEventListener('click', event => {vibrateOnChange = !vibrateOnChange})
+    <div class="tap">
+      <h2>Tap Detection</h2>
 
-                document.querySelectorAll(`.haptics .${side} .vibrations input`).forEach(input => {
-                    input.addEventListener('input', event => {
-                        if(vibrateOnChange) {
-                            document.querySelector(`.haptics .${side} .vibrate`).dispatchEvent(new Event('click'))
-                        }
-                    })
-                })
-                
-                document.querySelector(`.haptics .${side} .vibrate`).addEventListener('click', event => {
-                    const vibrations = []
+      <div class="left">
+        <h3>Left</h3>
 
-                    document.querySelectorAll(`.haptics .${side} .vibrations input`).forEach((input, index) => {
-                        const vibration = Number(input.value)
-                        if(vibration >= 0)
-                            vibrations.push(vibration)
-                    })
+        <div class="taps"></div>
+      </div>
 
-                    console.log(vibrations)
-                    
-                    if(vibrations.length)
-                        missions[side].vibrate(...vibrations)
-                })
-            })
+      <div class="right">
+        <h3>Right</h3>
 
-            missions[side].addEventListener('pressure', event => {
-                const {pressure, timestamp} = event.message
-                pressure.forEach((sensor, index) => {
-                    document.querySelector(`.pressure .${side} .data label:nth-of-type(${index+1}) input`).value = sensor.value
-                })
-                document.querySelector(`.pressure .${side} .data label:nth-of-type(17) input`).value = timestamp
-            })
+        <div class="taps"></div>
+      </div>
+    </div>
 
-            const types = ['accelerationIncludingGravity', 'rotationRate', 'quaternion', 'acceleration', 'orientation']
-            types.forEach(type => {
-                missions[side].addEventListener(type, event => {
-                    const {message} = event
+    <hr />
 
-                    const components = ['x', 'y', 'z']
-                    if(type == 'quaternion')
-                        components.push('w')
-                    
-                    components.forEach(component => {
-                        document.querySelector(`.motion .${side} .data .${type} .${component} input`).value = message[type][component].toFixed(3)
-                    })
-                    
-                    document.querySelector(`.motion .${side} .data .${type} .timestamp input`).value = message.timestamp
-                })
-            })
+    <div class="battery">
+      <h2>Battery</h2>
 
-            missions[side].addEventListener('tap', event => {
-                const {message} = event
-                const {isDoubleTap, timestamp} = message
-                document.querySelector(`.tap .${side} .taps`).innerHTML += `<div class=''>${isDoubleTap? "Double Tap":"Single Tap"}: ${timestamp}</div><br>`
-            })
+      <div class="left">
+        <h3>Left</h3>
 
-            missions[side].addEventListener('battery', event => {
-                const {message} = event
-                const {batteryLevel, voltage} = message
-                document.querySelector(`.battery .${side} .batteryLevel input`).value = batteryLevel
-                document.querySelector(`.battery .${side} .voltage input`).value = voltage
-            })
-        })
-    </script>
+        <label class="batteryLevel"
+          >Percentage
+          <input
+            type="number"
+            value="0"
+            min="0"
+            max="1"
+            step="0.01"
+            readonly
+          />%</label
+        >
+        <label class="voltage"
+          >Voltage
+          <input
+            type="number"
+            value="0"
+            min="0"
+            max="1"
+            step="0.01"
+            readonly
+          />v</label
+        >
+      </div>
+
+      <div class="right">
+        <h3>Right</h3>
+
+        <label class="batteryLevel"
+          >Percentage
+          <input
+            type="number"
+            value="0"
+            min="0"
+            max="1"
+            step="0.01"
+            readonly
+          />%</label
+        >
+        <label class="voltage"
+          >Voltage
+          <input
+            type="number"
+            value="0"
+            min="0"
+            max="1"
+            step="0.01"
+            readonly
+          />v</label
+        >
+      </div>
+    </div>
+  </body>
+
+  <script>
+    if (location.protocol != "https:")
+      location.replace(
+        `https:${location.href.substring(location.protocol.length)}`
+      );
+
+    const missions = new Missions();
+    const sides = ["left", "right"];
+    sides.forEach(side => {
+      document
+        .querySelector(`.connect .${side} input[type='button']`)
+        .addEventListener("click", event => missions[side].connect());
+
+      missions[side].addEventListener("connect", event => {
+        document
+          .querySelectorAll(`.${side} [disabled]`)
+          .forEach(input => (input.disabled = false));
+        document.querySelector(
+          `.connect .${side} input[type='button']`
+        ).disabled = true;
+
+        // PRESSURE SENSORS
+        document
+          .querySelector(`.pressure .${side} .enable input`)
+          .addEventListener("input", event => {
+            const enabled = event.target.checked;
+            missions[side].configureSensors({ pressure: enabled });
+          });
+
+        // ENABLE MOTION SENSORS
+        document
+          .querySelectorAll(`.motion .${side} .sensors label`)
+          .forEach(label => {
+            const type = label.className;
+            label
+              .querySelector(`input[type='checkbox']`)
+              .addEventListener("input", event => {
+                const enabled = event.target.checked;
+                missions[side].configureSensors({ [type]: enabled });
+              });
+          });
+
+        // HAPTICS
+        let vibrateOnChange = false;
+        document
+          .querySelector(`.haptics .${side} .vibrateOnChange`)
+          .addEventListener("click", event => {
+            vibrateOnChange = !vibrateOnChange;
+          });
+
+        document
+          .querySelectorAll(`.haptics .${side} .vibrations input`)
+          .forEach(input => {
+            input.addEventListener("input", event => {
+              if (vibrateOnChange) {
+                document
+                  .querySelector(`.haptics .${side} .vibrate`)
+                  .dispatchEvent(new Event("click"));
+              }
+            });
+          });
+
+        document
+          .querySelector(`.haptics .${side} .vibrate`)
+          .addEventListener("click", event => {
+            const vibrations = [];
+
+            document
+              .querySelectorAll(`.haptics .${side} .vibrations input`)
+              .forEach((input, index) => {
+                const vibration = Number(input.value);
+                if (vibration >= 0) vibrations.push(vibration);
+              });
+
+            console.log(vibrations);
+
+            if (vibrations.length) missions[side].vibrate(...vibrations);
+          });
+      });
+
+      missions[side].addEventListener("pressure", event => {
+        const { pressure, timestamp } = event.message;
+        pressure.forEach((sensor, index) => {
+          document.querySelector(
+            `.pressure .${side} .data label:nth-of-type(${index + 1}) input`
+          ).value = sensor.value;
+        });
+        document.querySelector(
+          `.pressure .${side} .data label:nth-of-type(17) input`
+        ).value = timestamp;
+
+        const { centerOfMass } = pressure;
+        const components = ["x", "y"];
+        components.forEach(component => {
+          document.querySelector(
+            `.pressure .${side} .centerOfMass label.${component} input`
+          ).value = centerOfMass[component];
+
+          document.querySelector(
+            `.pressure .centerOfMass label.${component} input`
+          ).value = missions.pressure.centerOfMass[component];
+        });
+      });
+
+      const types = [
+        "accelerationIncludingGravity",
+        "rotationRate",
+        "quaternion",
+        "acceleration",
+        "orientation",
+        "gravity",
+      ];
+      types.forEach(type => {
+        missions[side].addEventListener(type, event => {
+          const { message } = event;
+
+          const components = ["x", "y", "z"];
+          if (type == "quaternion") components.push("w");
+
+          components.forEach(component => {
+            document.querySelector(
+              `.motion .${side} .data .${type} .${component} input`
+            ).value = message[type][component].toFixed(3);
+          });
+
+          document.querySelector(
+            `.motion .${side} .data .${type} .timestamp input`
+          ).value = message.timestamp;
+        });
+      });
+
+      missions[side].addEventListener("tap", event => {
+        const { message } = event;
+        const { isDoubleTap, timestamp } = message;
+        document.querySelector(
+          `.tap .${side} .taps`
+        ).innerHTML += `<div class=''>${
+          isDoubleTap ? "Double Tap" : "Single Tap"
+        }: ${timestamp}</div><br>`;
+      });
+
+      missions[side].addEventListener("battery", event => {
+        const { message } = event;
+        const { batteryLevel, voltage } = message;
+        document.querySelector(
+          `.battery .${side} .batteryLevel input`
+        ).value = batteryLevel;
+        document.querySelector(
+          `.battery .${side} .voltage input`
+        ).value = voltage;
+      });
+    });
+  </script>
 </html>
